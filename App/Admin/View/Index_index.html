@@ -1,0 +1,74 @@
+<include file="./Public/Admin/html/head.html" />
+<body data-type="index">
+<div class="am-g tpl-g">
+    <include file="./Public/Admin/html/header.html" />
+    <include file="./Public/Admin/html/sidebar.html" />
+    <!-- 内容区域 -->
+    <!-- 内容区域 -->
+    <div class="tpl-content-wrapper">
+        <div class="row-content am-cf">
+            <div class="row">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title  am-cf">首页</div>
+                        </div>
+
+                        <div class="row  am-cf">
+                            <div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+                                <div class="widget widget-green  am-cf">
+                                    <div class="widget-statistic-header">
+                                        客户人数
+                                    </div>
+                                    <div class="widget-statistic-body">
+                                        <div class="widget-statistic-value">
+                                            {$member_num}/位
+                                        </div>
+                                        <span class="widget-statistic-icon am-icon-support"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                                <div class="widget widget-primary am-cf">
+                                    <div class="widget-statistic-header">
+                                        建材分类
+                                    </div>
+                                    <div class="widget-statistic-body">
+                                        <div class="widget-statistic-value">
+                                            {$style_num}/个
+                                        </div>
+                                        <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                                <div class="widget widget-purple am-cf">
+                                    <div class="widget-statistic-header">
+                                        <!--提现总数-->
+                                        商品数量
+                                    </div>
+                                    <div class="widget-statistic-body">
+                                        <div class="widget-statistic-value">
+                                            <!--￥{$amount|default="0.00"}-->
+                                            {$goods_num}/个
+                                        </div>
+                                        <span class="widget-statistic-icon am-icon-support"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="./Public/Admin/html/footer.html" />
+</body>
+<script type="text/javascript">
+
+
+</script>
+</html>

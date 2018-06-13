@@ -1,0 +1,75 @@
+<include file="./Public/Admin/html/head.html" />
+<body data-type="widgets">
+<script src="__JS__/main.js"></script>
+<div class="am-g tpl-g">
+    <script src="__JS__/theme.js"></script>
+    <!-- 内容区域 -->
+    <div class="tpl-content-wrapper">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-body am-fr">
+                        <form method="post"  class="am-form tpl-form-line-form">
+                            <div class="am-form-group">
+                                <label for="user-email" class="am-u-sm-3 am-form-label">姓名</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" class="tpl-form-input" name="username" placeholder="请输入姓名">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="user-email" class="am-u-sm-3 am-form-label">电话</label>
+                                <div class="am-u-sm-9">
+                                    <input type="tel" class="tpl-form-input" name="tel" placeholder="请输入电话">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="user-email" class="am-u-sm-3 am-form-label">地址</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" class="tpl-form-input" name="adress" placeholder="请输入地址">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <div class="am-u-sm-9 am-u-sm-push-3" style="margin-top: 35px;">
+                                    <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="./Public/Admin/html/footer.html" />
+<script>
+
+    $(function () {
+        $('form').ajaxForm(function (data) {
+            if (data['success']) {
+                parent.$("#example-r").load(parent.location.href+" #example-r");
+                layer.confirm('信息添加成功,是否要挑选建材商品？', {
+                    btn: ['开心接受','残忍拒绝'] //按钮
+                }, function(){
+                    location.href = data['info'];
+                }, function(){
+                    parent.layer.closeAll();
+                });
+
+//                layer.alert(data['info'], function (i) {
+//
+//                    parent.layer.close(i);
+//                    alert(1);
+//                });
+
+            } else {
+                layer.msg(data['info'], {
+                    icon: 5
+                });
+            }
+        });
+    });
+
+</script>
+</body>
+
+</html>l>

@@ -1,0 +1,45 @@
+<include file="./Public/Admin/html/head.html" />
+<style type="text/css">
+    .input_wid {
+        width: 100px;
+    }
+</style>
+<body data-type="widgets">
+<script src="__JS__/main.js"></script>
+<div class="am-g tpl-g">
+    <script src="__JS__/theme.js"></script>
+    <!-- 内容区域 -->
+
+    <div class="tpl-content-wrapper">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-body am-fr">
+                        <form name="form" action="{:U('select/add')}" method="post"  class="am-form tpl-form-line-form">
+                            <input name="user_id" hidden value="{$user_id}">
+                            {$str}
+                            <input type="button" onclick="return sub()" class="am-btn am-btn-primary" value="保存">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="./Public/Admin/html/footer.html" />
+<script>
+    function sub(){
+        layer.confirm('是否要保存该信息？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            form.submit();
+        }, function(){
+            return false;
+        });
+    }
+
+
+</script>
+</body>
+
+</html>l>
